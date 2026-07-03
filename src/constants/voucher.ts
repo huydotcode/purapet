@@ -27,7 +27,9 @@ export const voucherSchema = z.object({
     .optional()
     .refine((val) => !val || PHONE_REGEX.test(val), "Số điện thoại Việt Nam không đúng định dạng"),
   device: z.string(),
-  agree: z.literal(true, { message: "Bạn cần đồng ý với điều khoản nhận cẩm nang" }),
+  agree: z.boolean().refine((val) => val === true, {
+    message: "Bạn cần đồng ý với điều khoản nhận cẩm nang",
+  }),
 });
 
 export type VoucherFormData = z.infer<typeof voucherSchema>;
