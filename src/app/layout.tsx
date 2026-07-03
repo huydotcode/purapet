@@ -27,7 +27,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "PuraPet PurraFeed - Máy Cho Ăn Tự Động Kèm Camera",
     description: "Trọn vẹn dinh dưỡng đúng giờ cho thú cưng. Máy cho ăn tự động kèm camera HD, đàm thoại 2 chiều góc rộng.",
-    images: ["/purra_feed_hero.png"],
+    images: ["/purra_feed_hero.jpg"],
     url: "https://purapet.vn/purra-feed",
     type: "website",
     siteName: "PuraPet",

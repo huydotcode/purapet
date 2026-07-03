@@ -1,12 +1,22 @@
+import Image from "next/image";
+
 export default function Hero() {
   return (
     <section
       id="hero"
-      className="min-h-dvh flex items-center pt-25 pb-xl bg-bg-primary relative overflow-hidden transition-all duration-400
-        bg-[url('/hero_bg.png')] bg-cover bg-center bg-no-repeat
-        before:content-[''] before:absolute before:inset-0 before:z-10
-        before:bg-linear-to-r before:from-[#121e1c]/95 before:via-[#121e1c]/80 before:to-[#121e1c]/15"
+      className="min-h-dvh flex items-center pt-25 pb-xl bg-bg-primary relative overflow-hidden transition-all duration-400"
     >
+      <Image
+        src="/hero_bg.webp"
+        alt="PuraPet Hero Background"
+        fill
+        priority
+        quality={85}
+        sizes="100vw"
+        className="object-cover object-center z-0"
+      />
+      <div className="absolute inset-0 bg-linear-to-r from-[#121e1c]/95 via-[#121e1c]/80 to-[#121e1c]/15 z-10 pointer-events-none" />
+
       <div className="w-full max-w-275 mx-auto px-6 grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-16 items-center relative z-20">
         {/* Khối nội dung bên trái */}
         <div className="animate-slide-left-fade text-left z-30">
