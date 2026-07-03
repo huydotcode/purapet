@@ -19,6 +19,7 @@ const monoFont = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://purapet.vercel.app"),
   title: "PuraPet PurraFeed - Máy Cho Ăn Tự Động Kèm Camera | Thiết Kế Cao Cấp",
   description: "Khám phá máy cho ăn tự động kèm camera PuraPet PurraFeed chính hãng. Công nghệ chống kẹt hạt độc quyền, khóa tươi 3 lớp, giám sát đàm thoại 2 chiều qua camera HD 1080P.",
   keywords: ["PuraPet PurraFeed", "máy cho ăn tự động", "máy cho mèo ăn có camera", "thiết bị thú cưng thông minh", "PuraPet"],
@@ -41,7 +42,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased`}
+      className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased scroll-smooth scroll-pt-20`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
