@@ -15,9 +15,9 @@
   --color-accent-gold-light: rgba(192, 141, 60, 0.12);
   --color-border-custom: #dbe0d5;
   --color-card-bg: #ffffff;
-  --font-display: var(--font-display);
+  --font-display: var(--font-body);
   --font-body: var(--font-body);
-  --font-mono: var(--font-mono);
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   --radius-xs: 6px;
   --radius-sm: 14px;
   --radius-md: 24px;
