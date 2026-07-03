@@ -1,15 +1,21 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Be_Vietnam_Pro, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
+const displayFont = Plus_Jakarta_Sans({
+  subsets: ["vietnamese", "latin"],
+  variable: "--font-display",
+  weight: ["500", "600", "700", "800"],
 });
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const bodyFont = Be_Vietnam_Pro({
+  subsets: ["vietnamese", "latin"],
+  variable: "--font-body",
+  weight: ["300", "400", "500", "600", "700", "800"],
+});
+const monoFont = JetBrains_Mono({
   subsets: ["latin"],
+  variable: "--font-mono",
+  weight: ["400", "600"],
 });
 
 export const metadata: Metadata = {
@@ -25,7 +31,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
+      className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
