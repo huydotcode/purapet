@@ -6,16 +6,19 @@ const displayFont = Plus_Jakarta_Sans({
   subsets: ["vietnamese", "latin"],
   variable: "--font-display",
   weight: ["500", "600", "700", "800"],
+  display: "swap",
 });
 const bodyFont = Be_Vietnam_Pro({
   subsets: ["vietnamese", "latin"],
   variable: "--font-body",
   weight: ["300", "400", "500", "600", "700", "800"],
+  display: "swap",
 });
 const monoFont = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
   weight: ["400", "600"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
