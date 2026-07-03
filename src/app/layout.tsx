@@ -1,23 +1,11 @@
 import type { Metadata } from "next";
-import { Be_Vietnam_Pro, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/google";
+import { Be_Vietnam_Pro } from "next/font/google";
 import "./globals.css";
 
-const displayFont = Plus_Jakarta_Sans({
-  subsets: ["vietnamese"],
-  variable: "--font-display",
-  weight: ["600", "700", "800"],
-  display: "swap",
-});
 const bodyFont = Be_Vietnam_Pro({
   subsets: ["vietnamese"],
   variable: "--font-body",
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-const monoFont = JetBrains_Mono({
-  subsets: ["latin"],
-  variable: "--font-mono",
-  weight: ["400", "700"],
+  weight: ["400", "500", "600", "700", "800"],
   display: "swap",
 });
 
@@ -45,7 +33,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${displayFont.variable} ${bodyFont.variable} ${monoFont.variable} h-full antialiased scroll-smooth scroll-pt-20`}
+      className={`${bodyFont.variable} h-full antialiased scroll-smooth scroll-pt-20`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
