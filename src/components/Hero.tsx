@@ -7,11 +7,12 @@ export default function Hero() {
       className="min-h-dvh flex items-center pt-25 pb-xl bg-bg-primary relative overflow-hidden transition-all duration-400"
     >
       <Image
-        src="/hero_bg.webp"
+        src="/assets/images/hero_bg.webp"
         alt="PuraPet Hero Background"
         fill
         priority
-        quality={85}
+        fetchPriority="high"
+        quality={75}
         sizes="100vw"
         className="object-cover object-center z-0"
       />
