@@ -4,6 +4,7 @@ import FeedingSchedule from "@/components/FeedingSchedule";
 import SpecsComparison from "@/components/SpecsComparison";
 import ProductCatalog from "@/components/ProductCatalog";
 import VoucherForm from "@/components/VoucherForm";
+import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
@@ -16,6 +17,7 @@ export default function Home() {
         <ProductCatalog />
         <VoucherForm />
       </main>
+      <Footer />
     </>
   );
 }
