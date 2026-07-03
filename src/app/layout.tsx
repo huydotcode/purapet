@@ -3,21 +3,21 @@ import { Be_Vietnam_Pro, JetBrains_Mono, Plus_Jakarta_Sans } from "next/font/goo
 import "./globals.css";
 
 const displayFont = Plus_Jakarta_Sans({
-  subsets: ["vietnamese", "latin"],
+  subsets: ["vietnamese"],
   variable: "--font-display",
-  weight: ["500", "600", "700", "800"],
+  weight: ["600", "700", "800"],
   display: "swap",
 });
 const bodyFont = Be_Vietnam_Pro({
-  subsets: ["vietnamese", "latin"],
+  subsets: ["vietnamese"],
   variable: "--font-body",
-  weight: ["300", "400", "500", "600", "700", "800"],
+  weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 const monoFont = JetBrains_Mono({
   subsets: ["latin"],
   variable: "--font-mono",
-  weight: ["400", "600"],
+  weight: ["400", "700"],
   display: "swap",
 });
 
