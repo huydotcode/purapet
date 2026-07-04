@@ -8,7 +8,7 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-16 mb-16">
           <div className="flex flex-col">
             <a href="#" className="inline-flex items-center mb-6">
-              <Image src="/logo.png" alt="PuraPet Logo" width={38} height={38} className="h-[38px] w-auto object-contain" />
+              <Image src="/logo.png" alt="PuraPet Logo" width={38} height={38} className="h-[38px] w-[38px] object-contain" />
               <span className="text-[1.35rem] font-extrabold font-display ml-2.5 text-text-primary">PuraPet</span>
             </a>
             <p className="max-w-70 leading-relaxed">

@@ -30,7 +30,7 @@ export default function Header() {
             alt="PuraPet Logo"
             width={36}
             height={36}
-            className="h-9 w-auto object-contain rounded-lg transition-transform duration-200 hover:scale-[1.03]"
+            className="h-9 w-9 object-contain rounded-lg transition-transform duration-200 hover:scale-[1.03]"
           />
           <span className="text-accent-coral">PuraPet</span>
         </a>
