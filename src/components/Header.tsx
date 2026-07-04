@@ -5,14 +5,13 @@ import { useScrollspy } from "@/hooks/useScrollSpy";
 import Image from "next/image";
 import { useState } from "react";
 
+const SECTION_IDS = sections.map((s) => s.id);
+
 export default function Header() {
   const [isMobileOpen, setIsMobileOpen] = useState(false);
 
   const isScrolled = useScroll(20);
-  const activeSection = useScrollspy(
-    sections.map((s) => s.id),
-    "-30% 0px -60% 0px",
-  );
+  const activeSection = useScrollspy(SECTION_IDS);
 
   return (
     <header
