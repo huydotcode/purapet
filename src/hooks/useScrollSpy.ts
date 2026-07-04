@@ -1,36 +1,69 @@
 import { useState, useEffect } from "react";
 
-export function useScrollspy(sectionIds: string[], offsetMargin = "-30% 0px -60% 0px") {
+export function useScrollspy(sectionIds: string[]) {
   const [activeSection, setActiveSection] = useState("");
 
+  const idsStr = sectionIds.join(",");
+
   useEffect(() => {
-    const handleIntersection = (entries: IntersectionObserverEntry[]) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          setActiveSection(entry.target.id);
-        }
-      });
+    const ids = idsStr.split(",").filter(Boolean);
+    if (ids.length === 0) return;
+
+    let ticking = false;
+
+    const handleScroll = () => {
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          // Check if we are at the bottom of the page
+          const isAtBottom = window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 60;
+
+          if (isAtBottom) {
+            setActiveSection(ids[ids.length - 1]);
+            ticking = false;
+            return;
+          }
+
+          // Check if we are at the top of the page
+          if (window.scrollY < 50) {
+            setActiveSection(ids[0]);
+            ticking = false;
+            return;
+          }
+
+          // Check which section occupies the threshold marker (35% from viewport top)
+          let currentSection = "";
+          const threshold = window.innerHeight * 0.35;
+
+          for (const id of ids) {
+            const el = document.getElementById(id);
+            if (el) {
+              const rect = el.getBoundingClientRect();
+              if (rect.top <= threshold && rect.bottom > threshold) {
+                currentSection = id;
+                break;
+              }
+            }
+          }
+
+          if (currentSection) {
+            setActiveSection(currentSection);
+          }
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
 
-    const observer = new IntersectionObserver(handleIntersection, {
-      root: null, 
-      rootMargin: offsetMargin,
-      threshold: 0.1,
-    });
+    handleScroll();
 
-    sectionIds.forEach((id) => {
-      const el = document.getElementById(id);
-      if (el) observer.observe(el);
-    });
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    window.addEventListener("resize", handleScroll);
 
     return () => {
-      sectionIds.forEach((id) => {
-        const el = document.getElementById(id);
-        if (el) observer.unobserve(el);
-      });
-      observer.disconnect();
+      window.removeEventListener("scroll", handleScroll);
+      window.removeEventListener("resize", handleScroll);
     };
-  }, [sectionIds, offsetMargin]);
+  }, [idsStr]);
 
   return activeSection;
 }
